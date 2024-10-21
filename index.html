@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصويت اللاعبين</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .player-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .player {
+            margin: 20px;
+            cursor: pointer;
+        }
+        .player img {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        .player img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        
+        
+    body {
+            text-align: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .player-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .player {
+            margin: 20px;
+            cursor: pointer;
+        }
+        .player img {
+            width: 150px;
+            height: auto;
+            border: 2px solid #000;
+        }
+        .voted {
+            display: none;
+            font-size: 20px;
+            color: green;
+            margin-top: 10px;
+        }    
+        
+        
+        
+        
+        
+    
+        
+    </style>
+                  
+   
+</head>
+<body>
+    <h1>تصويتات اللاعبين</h1>
+    <p id="voteCount">عدد المصوتين: 0</p> <!-- إظهار عدد المصوتين هنا -->
+    
+    <div class="player-container">
+        <!-- لاعب الأهلي حسين الشحات -->
+        <div class="player" onclick="vote('voted1')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHwuOOXn-tiKqJ_M8_6S5nH4GDGu7XzBpd1IoT2Ge_CiN03bWVZ__tc-M&s=10" alt="حسين الشحات">
+            <p>حسين الشحات - الأهلي</p>
+            <p class="voted" id="voted1">تم التصويت</p>
+        </div>
+
+        <!-- لاعب الزمالك الجزيري -->
+        <div class="player" onclick="vote('voted2')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhfJKwr5UxKYcYBT2GAqrEkOcBzeOBQpecFYvnCIOhQxJU4QVVQ4Zfoyoa&s=10" alt="الجزيري">
+            <p>الجزيري - الزمالك</p>
+            <p class="voted" id="voted2">تم التصويت</p>
+        </div>
+    </div>
+
+    <div class="player-container">
+        <!-- مدافع الأهلي رامي ربيعة -->
+        <div class="player" onclick="vote('voted3')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBPC4xK60HLMmkVplkfXZ5T5_uYTq510DmuQ&usqp=CAU" alt="رامي ربيعة">
+            <p>رامي ربيعة - الأهلي</p>
+            <p class="voted" id="voted3">تم التصويت</p>
+        </div>
+
+        <!-- مدافع الزمالك أسامة عبد المجيد -->
+        <div class="player" onclick="vote('voted4')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZclhpECOljXfxLkwhn_MX8LMsLSjLGcepBQ&usqp=CAU" alt="أسامة عبد المجيد">
+            <p>أسامة عبد المجيد - الزمالك</p>
+            <p class="voted" id="voted4">تم التصويت</p>
+        </div>
+    </div>
+
+    <script>
+        let votingClosed = false;
+        let voteCount = 0;
+
+        function vote(id) {
+            if (!votingClosed) {
+                document.getElementById(id).style.display = 'block';
+                votingClosed = true;  // اغلاق التصويت بعد التصويت الأول
+                voteCount++;  // زيادة عدد المصوتين
+                document.getElementById("voteCount").textContent = "عدد المصوتين: " + voteCount;
+            } else {
+                alert("لقد قمت بالتصويت بالفعل!");  // رسالة للمستخدم عند محاولة التصويت مرة أخرى
+            }
+        }
+    </script>
+  <p>  <h4>
+      
+      
+      1. حسين الشحات النادي: الأهلي المصري
+المركز: جناح أيمن
+الإنجازات:
+حسين الشحات يعتبر واحدًا من أبرز لاعبي النادي الأهلي. بدأ مشواره مع نادي المقاصة قبل أن ينتقل إلى العين الإماراتي، حيث تألق في دوري أبطال آسيا ووصل مع الفريق إلى النهائي. عاد إلى مصر لينضم إلى الأهلي وحقق مع الفريق بطولات عديدة، منها دوري أبطال إفريقيا والسوبر الإفريقي. يتميز بسرعته ومهاراته العالية في المراوغة والتمريرات الحاسمة.
+<p>2. حسام عبدالمجيدالنادي: الزمالك المصري
+المركز: مدافع
+الإنجازات:
+حسام عبدالمجيد هو لاعب شاب في صفوف نادي الزمالك، وقد أثبت نفسه كأحد المدافعين الواعدين في الدوري المصري. يمتاز بقوته البدنية والقدرة على قطع الكرات في المواقف الصعبة. بدأ مسيرته مع فرق الناشئين في الزمالك وترقى إلى الفريق الأول حيث أصبح لاعباً أساسياً في تشكيل الفريق. يسعى دائماً إلى تطوير مستواه والمساهمة في الفوز بالمزيد من البطولات </p>
+
+ سيف الدين الجزيري النادي: الزمالك المصري
+المركز: مهاجم
+الإنجازات:
+سيف الدين الجزيري، المهاجم التونسي، يلعب في صفوف نادي الزمالك ويُعد من أهم المهاجمين في الفريق. بدأ مسيرته الاحترافية في تونس قبل أن ينتقل إلى مصر، حيث لعب في فرق مثل المقاولون العرب. انضم للزمالك وساهم في تحقيق العديد من الانتصارات بفضل أهدافه الحاسمة. يتميز بقدراته التهديفية وتواجده المميز في منطقة الجزاء.
+<p> رامي ربيعةالنادي: الأهلي المصري 4.
+المركز: مدافع
+الإنجازات:
+رامي ربيعة يُعد واحدًا من أقدم لاعبي النادي الأهلي، ويمتاز بخبرته الكبيرة في خط الدفاع. بدأ مسيرته مع الأهلي منذ أن كان في فرق الشباب، وحقق مع الفريق العديد من البطولات المحلية والدولية، مثل دوري أبطال إفريقيا والدوري المصري. يتميز بقوته في التعامل مع الكرات العالية وتغطية المساحات الكبيرة في الخط الخلفي.
+ </p>     
+  </h4>
+
+
+
+
+<iframe src="https://drive.google.com/file/d/1BFI5QU_7cdXkHm8ppTTJ5vUHlbWXOO7b/preview" 
+        style="width: 100%; height: auto;" 
+        allow="autoplay">
+</iframe>
+
+
+  </p>
+</body>
+</html>
